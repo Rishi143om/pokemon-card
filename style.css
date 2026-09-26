@@ -1,81 +1,94 @@
-*{
-    margin: 0%;
-    padding: 0%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
-#main{
+#main {
     height: 100%;
     width: 100%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-} 
+    position: relative;
+}
 
-.card{
-    position:absolute;
+.card {
+    position: absolute;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    height: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     width: 230px;
+    height: 300px;
+
     border: 2px solid salmon;
     border-radius: 20px;
     overflow: hidden;
 
+    transition: transform 0.5s;
 }
 
-.card:hover{
-    transform: translate(-50%,-50%) scale(1.1);
-    transition: 0.5s;
-    
+.card:hover {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
-#s0{
+#s0 {
     z-index: 4;
     background-color: blue;
-  
 }
 
-#s1{
-    z-index: 3;       
+#s1 {
+    z-index: 3;
     rotate: -8deg;
     background-color: pink;
 }
 
-#s1:hover{
+#s1:hover {
     z-index: 5;
 }
 
-#s2{
+#s2 {
     z-index: 2;
     rotate: -16deg;
     background-color: greenyellow;
 }
 
-#s2:hover{
+#s2:hover {
     z-index: 5;
 }
 
-#s3{
+#s3 {
     z-index: 1;
-    rotate: -24deg ;
+    rotate: -24deg;
     background-color: red;
 }
 
-#s3:hover{
+#s3:hover {
     z-index: 5;
 }
 
-img{
+img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
+/* 📱 MOBILE */
+@media (max-width: 600px) {
 
+    .card {
+        width: 58vw;
+        height: 76vw;
+        max-width: 230px;
+        max-height: 300px;
+    }
+
+    .card:hover {
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+}
